@@ -1,4 +1,4 @@
-# 💬 Chatbot Support System (Internship Project)
+# 💬 Chatbot Support System 
 
 ## ✅ Project Overview
 
@@ -6,17 +6,15 @@ This is a basic chatbot-based customer support system.
 The project allows website visitors to chat with a bot, and an admin can log in to view all chat messages.
 
 
-## 📁 Folder Structure
-
 chatbot/
 ├── index.html → Main chatbot interface
 ├── style.css → Styling for chatbot widget
 ├── script.js → JavaScript logic for chatbot
-├── save_messages.php → Backend script to save messages to MySQL
-├── admin_login.html → Admin login form
-├── login.php → PHP script to handle login validation
+├── save_message.php → Backend script to save messages to MySQL
+├── admin_login.php → Admin login form + login validation
 ├── admin_dashboard.php → Admin dashboard to view messages
 ├── logout.php → Ends admin session
+
 
 
 ## 🔧 Technologies Used
