@@ -1,17 +1,18 @@
-# 💬 Chatbot Support System 
+# 💬 Chatbot Suppchatbot
 
 ## ✅ Project Overview
 
 This is a basic chatbot-based customer support system.  
 The project allows website visitors to chat with a bot, and an admin can log in to view all chat messages.
 
-
+🗂️ Folder Structure:
 chatbot/
 ├── index.html → Main chatbot interface
 ├── style.css → Styling for chatbot widget
 ├── script.js → JavaScript logic for chatbot
 ├── save_message.php → Backend script to save messages to MySQL
 ├── admin_login.php → Admin login form + login validation
+├── login.php → (optional, if separated from admin_login.php)
 ├── admin_dashboard.php → Admin dashboard to view messages
 ├── logout.php → Ends admin session
 
