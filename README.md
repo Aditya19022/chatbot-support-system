@@ -7,14 +7,16 @@ The project allows website visitors to chat with a bot, and an admin can log in 
 
 🗂️ Folder Structure:
 chatbot/
-├── index.html → Main chatbot interface
-├── style.css → Styling for chatbot widget
-├── script.js → JavaScript logic for chatbot
-├── save_message.php → Backend script to save messages to MySQL
-├── admin_login.php → Admin login form + login validation
-├── login.php → (optional, if separated from admin_login.php)
-├── admin_dashboard.php → Admin dashboard to view messages
-├── logout.php → Ends admin session
+├── index.html                ✅  (chatbot user interface)
+├── style.css                 ✅  (styling for chatbot)
+├── script.js                 ✅  (chatbot logic incl. admin reply display)
+├── save_messages.php         ✅  (saves user + bot messages)
+├── admin_login.php           ✅  (login page for admin)
+├── login.php                 ✅  (verifies credentials)
+├── admin_dashboard.php       ✅  (admin sees and replies to messages)
+├── send_reply.php            ✅  (admin sends replies)
+├── logout.php                ✅  (logout button)
+├── README.md                 ✅  (project explanation)
 
 
 
