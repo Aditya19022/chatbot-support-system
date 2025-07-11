@@ -34,6 +34,7 @@ chatbot/
 - ✅ Messages saved with timestamps in MySQL
 - ✅ Admin login page (username/password hardcoded)
 - ✅ Admin dashboard showing all chat messages
+- ✅ Admin can reoly to all chat messages
 - ✅ Logout button for admin
 
 
