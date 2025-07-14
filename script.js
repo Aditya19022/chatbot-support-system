@@ -1,10 +1,10 @@
-// Get elements using correct IDs as per index.html
-const chatButton = document.getElementById("chat-btn");    // Button to open chat
-const chatBox = document.getElementById("chat-box");       // Full chat popup
-const chatArea = document.getElementById("chat-area");     // Area where messages are shown
-const userInput = document.getElementById("user-input");   // Input for user message
-const sendBtn = document.getElementById("send-btn");       // Send button
-const closeBtn = document.getElementById("close-btn");     // Close button
+// Get elements
+const chatButton = document.getElementById("chat-btn");
+const chatBox = document.getElementById("chat-box");
+const chatArea = document.getElementById("chat-area");
+const userInput = document.getElementById("user-input");
+const sendBtn = document.getElementById("send-btn");
+const closeBtn = document.getElementById("close-btn");
 
 // Show chat popup when chat button is clicked
 chatButton.addEventListener("click", () => {
@@ -24,10 +24,7 @@ function loadMessages() {
     .then((data) => {
       chatArea.innerHTML = ""; // Clear chat
       data.forEach(msg => {
-        const div = document.createElement("div");
-        div.className = msg.sender === "You" ? "user-message" : "bot-message";
-        div.textContent = msg.message;
-        chatArea.appendChild(div);
+        appendMessage(msg.sender, msg.message);
       });
       chatArea.scrollTop = chatArea.scrollHeight;
     })
@@ -55,11 +52,7 @@ function sendMessage() {
     body: `sender=You&message=${encodeURIComponent(message)}`
   });
 
-  // Show user's message
-  const userMsg = document.createElement("div");
-  userMsg.className = "user-message";
-  userMsg.textContent = message;
-  chatArea.appendChild(userMsg);
+  appendMessage("You", message);
   userInput.value = "";
 
   // Get bot reply
@@ -72,12 +65,31 @@ function sendMessage() {
     body: `sender=Bot&message=${encodeURIComponent(reply)}`
   });
 
-  // Show bot reply
-  const botMsg = document.createElement("div");
-  botMsg.className = "bot-message";
-  botMsg.textContent = reply;
-  chatArea.appendChild(botMsg);
+  appendMessage("Bot", reply);
 
+  chatArea.scrollTop = chatArea.scrollHeight;
+}
+
+// Append a message with sender label
+function appendMessage(sender, message) {
+  const div = document.createElement("div");
+  div.className = "chat-message " +
+    (sender === "You" ? "user-message" :
+     sender === "Admin" ? "admin-message" : "bot-message");
+
+  // Add sender label
+  const senderSpan = document.createElement("span");
+  senderSpan.className = "sender-label";
+  senderSpan.textContent = (sender === "You" ? "User" : sender) + ": ";
+  div.appendChild(senderSpan);
+
+  // Add message text
+  const messageSpan = document.createElement("span");
+  messageSpan.className = "message-text";
+  messageSpan.textContent = message;
+  div.appendChild(messageSpan);
+
+  chatArea.appendChild(div);
   chatArea.scrollTop = chatArea.scrollHeight;
 }
 
