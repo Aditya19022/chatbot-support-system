@@ -1,93 +1,52 @@
-/* Floating Chat Button */
-#chat-btn {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background-color: #007bff;
-  color: white;
-  padding: 16px;
-  border-radius: 50%;
-  font-size: 22px;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  z-index: 999;
-}
-
-/* Chat Box */
-#chat-box {
-  position: fixed;
-  bottom: 90px;
-  right: 25px;
-  width: 360px;
-  max-height: 500px;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
+/* Chat message container */
+.chat-message {
   display: flex;
-  flex-direction: column;
-  z-index: 999;
-  font-family: 'Segoe UI', sans-serif;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  width: fit-content;
+  max-width: 85%;
+  font-size: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
 }
 
-/* Header */
-#chat-header {
-  background-color: #007bff;
-  color: white;
-  padding: 12px 16px;
-  font-size: 18px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Sender label styling */
+.sender-label {
+  font-weight: bold;
+  margin-right: 8px;
+  min-width: 60px;
+  color: #555;
 }
 
-/* Close Button */
-#close-btn {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
+/* User message style */
+.user-message {
+  background: #e3f0fc;
 }
 
-/* Chat Messages */
+/* Bot message style */
+.bot-message {
+  background: #e8f5e9;
+}
+
+/* Admin message style */
+.admin-message {
+  background: #ffebee;
+}
+
+/* Color coding sender names */
+.user-message .sender-label { color: #1976d2; }
+.bot-message .sender-label { color: #388e3c; }
+.admin-message .sender-label { color: #d32f2f; }
+
+.message-text {
+  word-break: break-word;
+}
+
+/* Optional: make chat area scroll if many messages */
 #chat-area {
-  padding: 14px;
-  flex: 1;
+  max-height: 350px;
   overflow-y: auto;
-  background-color: #f9f9f9;
-  font-size: 16px;
+  padding-right: 10px;
 }
 
-.message {
-  margin-bottom: 12px;
-  line-height: 1.4;
-}
-
-/* Input Area */
-#chat-input {
-  display: flex;
-  padding: 12px;
-  border-top: 1px solid #ccc;
-  background-color: #fff;
-}
-
-#chat-input input {
-  flex: 1;
-  padding: 10px 12px;
-  border-radius: 8px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  outline: none;
-}
-
-#send-btn {
-  margin-left: 8px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-}
