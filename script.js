@@ -37,7 +37,7 @@ function sendMessage() {
   if (message === "") return;
 
   // Save user's message
-  fetch("save_messages.php", {
+  fetch("save_message.php", {
     method: "POST",
     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
     body: `sender=You&message=${encodeURIComponent(message)}`
@@ -54,7 +54,7 @@ function sendMessage() {
   let reply = getBotReply(message);
 
   // Save bot reply
-  fetch("save_messages.php", {
+  fetch("save_message.php", {
     method: "POST",
     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
     body: `sender=Bot&message=${encodeURIComponent(reply)}`
