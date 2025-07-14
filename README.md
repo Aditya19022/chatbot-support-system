@@ -10,14 +10,14 @@ chatbot/
 ├── index.html                ✅  (chatbot user interface)
 ├── style.css                 ✅  (styling for chatbot)
 ├── script.js                 ✅  (chatbot logic incl. admin reply display)
-├── save_messages.php         ✅  (saves user + bot messages)
+├── save_message.php          ✅  (saves user + bot messages)
+├── get_messages.php          ✅  (saves user + bot messages)
 ├── admin_login.php           ✅  (login page for admin)
 ├── login.php                 ✅  (verifies credentials)
 ├── admin_dashboard.php       ✅  (admin sees and replies to messages)
 ├── send_reply.php            ✅  (admin sends replies)
 ├── logout.php                ✅  (logout button)
-├── README.md                 ✅  (project explanation)
-
+├── README.md                 ✅  (project explanation)├──_messages.php   
 
 
 ## 🔧 Technologies Used
